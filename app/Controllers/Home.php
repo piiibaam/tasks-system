@@ -12,6 +12,7 @@ class Home extends BaseController
 
         $data['tasks'] = $taskModel
             ->where('task_date', date('Y-m-d'))
+            ->where('is_archived', 0)
             ->findAll();
 
         return view('welcome', $data);
